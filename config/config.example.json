@@ -1,0 +1,48 @@
+{
+  "providers": {
+    "aws": {
+      "region": "us-west-2",
+      "bucket": "your-test-bucket",
+      "accessKeyId": "your-access-key-id",
+      "secretAccessKey": "your-secret-access-key",
+      "endpoint": null
+    },
+    "gcp": {
+      "projectId": "your-project-id",
+      "bucket": "your-gcp-bucket",
+      "keyFilename": "path/to/service-account.json",
+      "credentials": null
+    },
+    "azure": {
+      "accountName": "your-storage-account",
+      "accountKey": "your-account-key",
+      "containerName": "your-container",
+      "connectionString": null
+    },
+    "minio": {
+      "endPoint": "localhost",
+      "port": 9000,
+      "useSSL": false,
+      "accessKey": "minio-access-key",
+      "secretKey": "minio-secret-key",
+      "bucket": "test-bucket"
+    }
+  },
+  "testing": {
+    "timeout": 30000,
+    "retryAttempts": 3,
+    "concurrentConnections": 10,
+    "testDataDir": "test-data",
+    "cleanupAfterTests": true
+  },
+  "benchmark": {
+    "fileSizes": [
+      { "name": "1KB", "size": 1024 },
+      { "name": "1MB", "size": 1048576 },
+      { "name": "10MB", "size": 10485760 },
+      { "name": "100MB", "size": 104857600 }
+    ],
+    "iterations": 5,
+    "warmupRuns": 2
+  }
+}
